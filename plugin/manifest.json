@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Mini ERP - WooCommerce管理系统",
+  "version": "1.0.5",
+  "description": "轻量级Chrome扩展ERP系统，专为WooCommerce电商平台设计，功能纯粹，完全免费。基于React 18 + TypeScript + Material-UI构建，提供高效的商品管理、店铺管理和订单管理功能。",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "Mini ERP - WooCommerce管理系统",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "windows",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/maximized/index.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
